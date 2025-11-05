@@ -46,7 +46,7 @@ export const generateM3u = async (uri: string, linear = false, excludeGracenote 
     _.times(numOfChannels, i => {
       const channelNum = startChannel + i;
       m3uFile = `${m3uFile}\n#EXTINF:0 tvg-id="${channelNum}.eplustv" channel-number="${channelNum}" tvg-chno="${channelNum}" tvg-name="EPlusTV ${channelNum}" group-title="EPlusTV", EPlusTV ${channelNum}`;
-      m3uFile = `${m3uFile}\n${uri}/channels/${channelNum}.m3u8\n`;
+      m3uFile = `${m3uFile}\nhttp://10.0.0.122:7654/play/tuner/${channelNum}\n`;
     });
   }
 
